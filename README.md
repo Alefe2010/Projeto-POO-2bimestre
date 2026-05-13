@@ -1,48 +1,132 @@
+# 🏙️ TechCity Control — Módulo 5: Sistema de Chamados Urbanos
 
-# 🛸 Sistema de Controle de Entregas com Drones
+Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos (POO)** do curso Técnico em Desenvolvimento de Sistemas do **IFAL – Campus Maceió**.
 
-Este projeto é um **módulo de inteligência logística** focado na orquestração de entregas autónomas. O sistema funciona como um centro de controlo que une a procura (pedidos) à capacidade operacional (drones), garantindo que o fluxo de transporte seja eficiente, rastreável e seguro.
+## 👨‍💻 Integrantes da Equipe
 
----
-
-## 📖 Descrição do Projeto
-
-O sistema foi concebido para resolver a complexidade da logística de última milha utilizando tecnologia aérea. Ele atua na camada de gestão, transformando pedidos de entrega em missões coordenadas, onde cada drone é alocado de acordo com a sua capacidade técnica e disponibilidade em tempo real. 
-
-A solução integra hardware, logística e supervisão humana, permitindo que operadores monitorizem o ciclo de vida completo de cada entrega, desde o registo inicial até a conclusão do voo e libertação do ativo para a próxima missão. 🚀
+- **Vinícius Rodrigues da Silva**
+- **Vitor Miguel Rocha Calheiros**
+- **Álefe Matheus Silva dos Santos**
 
 ---
 
-## 📌 Resumo das Funcionalidades
+# 📚 Sobre o Projeto
 
-O ecossistema está estruturado em quatro pilares fundamentais para garantir a máxima performance:
+O **TechCity Control** é uma plataforma criada para auxiliar na administração de serviços urbanos da cidade fictícia **TechCity**.
 
-* **🛸 Gestão de Frota:** Registo detalhado de drones, monitorizando identificadores únicos, limites de carga útil e estados operacionais.
-* **📦 Pipeline de Pedidos:** Sistema de entrada de encomendas com descrições detalhadas e destinos geográficos.
-* **🔗 Orquestrador de Entregas:** O "cérebro" do módulo, que realiza a associação inteligente entre o drone ideal e o pedido pendente.
-* **🔄 Sincronização Dinâmica:** Atualização contínua de status, garantindo visibilidade total sobre o progresso das entregas e a prontidão dos operadores.
+Nossa equipe ficou responsável pelo **Módulo 5 — Sistema de Chamados Urbanos**, que tem como objetivo registrar, organizar e acompanhar problemas urbanos reportados pelos moradores, permitindo que equipes responsáveis sejam acionadas para atendimento.
 
----
+Exemplos de chamados:
 
-## ⚙️ Requisitos de Engenharia (Backlog)
-
-| Código | Requisito | Impacto no Sistema |
-| :--- | :--- | :--- |
-| **RF01** | **Cadastro de Drones** | Garante que apenas drones autorizados e com capacidade conhecida entrem na frota. |
-| **RF02** | **Registo de Pedidos** | Cria a fila de procura com especificações de destino e prioridade. |
-| **RF03** | **Associação de Ativos** | Cria o vínculo formal entre o hardware e o pacote para a execução da missão. |
-| **RF04** | **Atualização de Status** | Mantém a telemetria do sistema atualizada, libertando recursos pós-entrega. |
+- Buracos em vias públicas
+- Falta de iluminação
+- Vazamentos
+- Problemas de limpeza urbana
+- Sinalização danificada
 
 ---
 
-## 🏗️ Estrutura do Módulo
+# 🎯 Objetivos do Sistema
 
-Para manter o nível profissional, o sistema organiza-se através de elementos chave:
-- **Drones:** Ativos físicos com limites de carga.
-- **Pedidos:** A procura do cliente final.
-- **Entregas:** O evento de união entre pedido e transporte.
-- **Operadores:** Supervisores responsáveis pela segurança da operação.
-- **Disponibilidade:** Motor de estados que dita o ritmo da operação.
+O sistema permite:
+
+- Registrar chamados urbanos
+- Organizar categorias de problemas
+- Cadastrar equipes de atendimento
+- Associar equipes aos chamados
+- Registrar histórico das operações realizadas
+- Controlar o andamento dos atendimentos
 
 ---
-**Status do Projeto:** 🟢 Ativo & Operacional
+
+# ⚙️ Funcionalidades Obrigatórias
+
+## RF01 — Registro de Chamados
+
+Permite cadastrar chamados contendo:
+
+- Identificador
+- Descrição
+- Categoria
+- Localização
+- Status
+
+---
+
+## RF02 — Cadastro de Equipes
+
+Permite registrar equipes contendo:
+
+- Identificador
+- Nome
+- Disponibilidade
+
+---
+
+## RF03 — Associação de Equipes
+
+O controlador do sistema realiza:
+
+- Identificação de equipes disponíveis
+- Associação da equipe ao chamado
+- Atualização do status do atendimento
+
+---
+
+## RF04 — Histórico de Atendimentos
+
+Permite registrar:
+
+- Operações realizadas
+- Alterações de status
+- Equipe responsável
+- Data e hora das operações
+
+---
+
+# 🚀 Requisitos Adicionais Implementados
+
+## RF05 — Definição de Prioridade
+
+Cada chamado pode receber níveis de prioridade:
+
+- Baixa
+- Média
+- Alta
+- Emergencial
+
+### Justificativa:
+Permite que problemas críticos sejam atendidos primeiro.
+
+---
+
+## RF06 — Encerramento com Relatório
+
+Ao finalizar um atendimento, a equipe deverá registrar:
+
+- Solução aplicada
+- Data de conclusão
+- Responsável pelo atendimento
+
+### Justificativa:
+Melhora a rastreabilidade e auditoria das operações.
+
+---
+
+# 🧱 Estrutura do Projeto
+
+```bash
+src/
+│
+├── models/
+│   ├── Usuario.js
+│   ├── Chamado.js
+│   ├── Equipe.js
+│   ├── Historico.js
+│   └── RegistroOperacao.js
+│
+├── controllers/
+│   ├── SistemaController.js
+│   └── ChamadoController.js
+│
+└── index.js
