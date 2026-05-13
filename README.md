@@ -9,6 +9,8 @@ Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos (P
 - **Álefe Matheus Silva dos Santos**
 
 ---
+## Professor: MSc. Ricardo Nunes
+---
 
 # 📚 Sobre o Projeto
 
