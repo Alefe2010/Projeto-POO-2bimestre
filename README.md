@@ -88,40 +88,9 @@ Permite registrar:
 
 ---
 
-# 🚀 Requisitos Adicionais Implementados
-
-## RF05 — Definição de Prioridade
-
-Cada chamado pode receber níveis de prioridade:
-
-- Baixa
-- Média
-- Alta
-- Emergencial
-
-### Justificativa:
-Permite que problemas críticos sejam atendidos primeiro.
-
----
-
-## RF06 — Encerramento com Relatório
-
-Ao finalizar um atendimento, a equipe deverá registrar:
-
-- Solução aplicada
-- Data de conclusão
-- Responsável pelo atendimento
-
-### Justificativa:
-Melhora a rastreabilidade e auditoria das operações.
-
----
-
 # 🧱 Estrutura do Projeto
 
 ```bash
-src/
-│
 ├── models/
 │   ├── Usuario.js
 │   ├── Chamado.js
