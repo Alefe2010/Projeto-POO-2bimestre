@@ -1,19 +1,21 @@
 class Historico {
-    constructor(){
+
+    constructor() {
         this.eventos = [];
     }
 
-    adicionarEvento(descricao){
-        let data = new Date();
-
+    adicionarEvento(descricao) {
         this.eventos.push({
             descricao,
-            data
+            data: new Date()
         });
+
     }
 
-    mostrarHistorico(){
-        console.log(this.eventos)
+    mostrarHistorico() {
+        console.log(
+            this.eventos
+        );
     }
 }
 

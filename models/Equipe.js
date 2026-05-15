@@ -1,24 +1,27 @@
 class Equipe {
-    constructor (id, nome, ativo = true){
-        this.id = id;
+    #id;
+
+    constructor(id, nome, disponivel = true) {
+        this.#id = id;
         this.nome = nome;
-        this.disponivel = ativo;
-    };
+        this.disponivel = disponivel;
+    }
 
-    ocupar(){
+    ocupar() {
         this.disponivel = false;
-    };
+    }
 
-    liberar(){
+    liberar() {
         this.disponivel = true;
     }
 
-    exibirInfo(){
-        console.log(
-            `Usuário: ${this.nome} | Equipe: ${this.ativo}`
-        )
+    exibirInfo() {
+        console.log({
+            id: this.#id,
+            nome: this.nome,
+            disponivel: this.disponivel
+        });
     }
-    
 }
 
 module.exports = Equipe;

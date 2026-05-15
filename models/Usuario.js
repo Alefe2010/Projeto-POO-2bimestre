@@ -1,24 +1,27 @@
 class Usuario {
-    constructor (id, nome, ativo = true){
-        this.id = id;
+    #id;
+
+    constructor(id, nome, ativo = true) {
+        this.#id = id;
         this.nome = nome;
         this.ativo = ativo;
-    };
+    }
 
-    ativar(){
+    ativar() {
         this.ativo = true;
-    };
+    }
 
-    desativar(){
+    desativar() {
         this.ativo = false;
     }
 
-    exibirInfo(){
-        console.log(
-            `Usuário: ${this.nome} | Ativo: ${this.ativo}`
-        )
+    exibirInfo() {
+        console.log({
+            id: this.#id,
+            nome: this.nome,
+            ativo: this.ativo
+        });
     }
-    
 }
 
 module.exports = Usuario;
