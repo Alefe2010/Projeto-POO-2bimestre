@@ -1,55 +1,64 @@
-# 🏙️ TechCity Control — Módulo 5: Sistema de Chamados Urbanos
+# 🏙️ TechCity Control
 
-Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos (POO)** do curso Técnico em Desenvolvimento de Sistemas do **IFAL – Campus Maceió**.
+### Sistema de Chamados Urbanos — Módulo 5
 
-## 👨‍💻 Integrantes da Equipe
+Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos (POO)** do curso **Técnico em Desenvolvimento de Sistemas** do **Instituto Federal de Alagoas (IFAL) – Campus Maceió**.
+
+---
+
+## 👨‍💻 Equipe
 
 - **Vinícius Rodrigues da Silva**
 - **Vitor Miguel Rocha Calheiros**
 - **Álefe Matheus Silva dos Santos**
 
 ---
+
 ## 👨‍🏫 Professor Orientador
 
 **Prof. MSc. Ricardo Nunes**
----
-
-# 📚 Sobre o Projeto
-
-O **TechCity Control** é uma plataforma criada para auxiliar na administração de serviços urbanos da cidade fictícia **TechCity**.
-
-Nossa equipe ficou responsável pelo **Módulo 5 — Sistema de Chamados Urbanos**, que tem como objetivo registrar, organizar e acompanhar problemas urbanos reportados pelos moradores, permitindo que equipes responsáveis sejam acionadas para atendimento.
-
-Exemplos de chamados:
-
-- Buracos em vias públicas
-- Falta de iluminação
-- Vazamentos
-- Problemas de limpeza urbana
-- Sinalização danificada
 
 ---
 
-# 🎯 Objetivos do Sistema
+# 📖 Sobre o Projeto
 
-O sistema permite:
+O **TechCity Control** é uma plataforma voltada para o gerenciamento de serviços urbanos da cidade fictícia **TechCity**.
 
-- Registrar chamados urbanos
-- Organizar categorias de problemas
-- Cadastrar equipes de atendimento
-- Associar equipes aos chamados
-- Registrar histórico das operações realizadas
-- Controlar o andamento dos atendimentos
+Nossa equipe ficou responsável pelo **Módulo 5 – Sistema de Chamados Urbanos**, cujo objetivo é registrar, organizar e acompanhar ocorrências reportadas pelos cidadãos, permitindo o gerenciamento das equipes responsáveis pelo atendimento.
+
+O sistema possibilita o acompanhamento completo do ciclo de vida de um chamado, desde sua abertura até sua conclusão.
+
+### Exemplos de ocorrências
+
+- 💡 Falta de iluminação pública
+- 🛣️ Buracos em vias públicas
+- 🚰 Vazamentos
+- 🧹 Problemas de limpeza urbana
+- 🚧 Sinalização danificada
 
 ---
 
-# ⚙️ Funcionalidades Obrigatórias
+# 🎯 Objetivos
 
-## RF01 — Registro de Chamados
+O sistema foi desenvolvido para:
+
+- Registrar chamados urbanos;
+- Cadastrar equipes responsáveis pelos atendimentos;
+- Associar equipes aos chamados;
+- Controlar a disponibilidade das equipes;
+- Registrar operações realizadas no sistema;
+- Manter histórico completo dos atendimentos;
+- Acompanhar o status de cada ocorrência.
+
+---
+
+# ⚙️ Funcionalidades Implementadas
+
+## 📌 RF01 — Registro de Chamados
 
 Permite cadastrar chamados contendo:
 
-- Identificador
+- ID
 - Descrição
 - Categoria
 - Localização
@@ -57,49 +66,123 @@ Permite cadastrar chamados contendo:
 
 ---
 
-## RF02 — Cadastro de Equipes
+## 👷 RF02 — Cadastro de Equipes
 
 Permite registrar equipes contendo:
 
-- Identificador
+- ID
 - Nome
 - Disponibilidade
 
 ---
 
-## RF03 — Associação de Equipes
+## 🔄 RF03 — Associação de Equipes
 
-O controlador do sistema realiza:
+O sistema permite:
 
-- Identificação de equipes disponíveis
-- Associação da equipe ao chamado
-- Atualização do status do atendimento
+- Verificar disponibilidade da equipe;
+- Associar equipe ao chamado;
+- Atualizar o status do atendimento.
 
 ---
 
-## RF04 — Histórico de Atendimentos
+## 📝 RF04 — Histórico de Atendimentos
 
 Permite registrar:
 
-- Operações realizadas
-- Alterações de status
-- Equipe responsável
-- Data e hora das operações
+- Criação de chamados;
+- Alterações de status;
+- Equipes atribuídas;
+- Data e hora das operações.
 
 ---
 
-# 🧱 Estrutura do Projeto
+# 🏗️ Arquitetura do Projeto
 
-```bash
+O projeto foi desenvolvido seguindo os princípios de **Programação Orientada a Objetos**, utilizando:
+
+- Encapsulamento;
+- Composição;
+- Associação;
+- Agregação;
+- Separação de responsabilidades;
+- Arquitetura baseada em Models e Controllers.
+
+### Organização
+
+**Models**
+- Usuario
+- Equipe
+- Chamado
+- Historico
+- RegistroOperacao
+
+**Controllers**
+- SistemaController
+- ChamadoController
+
+---
+
+# 📊 Diagrama de Classes UML
+
+> Modelagem desenvolvida para representar as entidades, controladores e relacionamentos do sistema.
+
+![Diagrama UML](modelagem.png)
+
+---
+
+# 📁 Estrutura do Projeto
+
+```text
+TechCity-Control/
+│
+├── controllers/
+│   ├── ChamadoController.js
+│   └── SistemaController.js
+│
 ├── models/
-│   ├── Usuario.js
 │   ├── Chamado.js
 │   ├── Equipe.js
 │   ├── Historico.js
-│   └── RegistroOperacao.js
+│   ├── RegistroOperacao.js
+│   └── Usuario.js
 │
-├── controllers/
-│   ├── SistemaController.js
-│   └── ChamadoController.js
-│
-└── index.js
+├── index.js
+├── modelagem.png
+└── README.md
+```
+
+---
+
+# ▶️ Executando o Projeto
+
+Certifique-se de possuir o **Node.js** instalado.
+
+Execute o projeto com:
+
+```bash
+node index.js
+```
+
+---
+
+# 📚 Conceitos de POO Aplicados
+
+- Classes e Objetos
+- Encapsulamento
+- Métodos
+- Composição
+- Associação
+- Agregação
+- Modularização
+- Controllers para coordenação das operações
+
+---
+
+# 📄 Licença
+
+Projeto acadêmico desenvolvido exclusivamente para fins educacionais na disciplina de **Programação Orientada a Objetos (POO)** do **IFAL – Campus Maceió**.
+
+---
+
+✨ **TechCity Control — Conectando cidadãos e equipes para uma cidade mais organizada.**
