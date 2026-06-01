@@ -1,5 +1,4 @@
 class Historico {
-
     constructor() {
         this.eventos = [];
     }
@@ -9,13 +8,15 @@ class Historico {
             descricao,
             data: new Date()
         });
-
     }
 
     mostrarHistorico() {
-        console.log(
-            this.eventos
-        );
+        if (this.eventos.length === 0) {
+            console.log("Nenhum evento registrado.");
+            return;
+        }
+
+        console.log(this.eventos);
     }
 }
 

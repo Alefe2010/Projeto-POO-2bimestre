@@ -7,6 +7,10 @@ class Usuario {
         this.ativo = ativo;
     }
 
+    get id() {
+        return this.#id;
+    }
+
     ativar() {
         this.ativo = true;
     }

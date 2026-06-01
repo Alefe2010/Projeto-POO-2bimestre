@@ -7,6 +7,10 @@ class Equipe {
         this.disponivel = disponivel;
     }
 
+    get id() {
+        return this.#id;
+    }
+
     ocupar() {
         this.disponivel = false;
     }
