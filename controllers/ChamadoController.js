@@ -1,5 +1,4 @@
-const Chamado = require("../models/Chamado");
-
+const Chamado = require("../models/Chamado"); 
 class ChamadoController {
     constructor() {
         this.chamados = []; 
@@ -20,6 +19,7 @@ class ChamadoController {
 
     atribuirEquipe(chamado, equipe) {
         if (!chamado || !equipe || !equipe.disponivel) {
+            console.log("Não foi possível atribuir a equipe. Verifique os dados ou a disponibilidade.");
             return;
         }
 
@@ -27,6 +27,7 @@ class ChamadoController {
         equipe.ocupar();
         chamado.atualizarStatus("Em Andamento");
     }
+
 
     finalizarChamado(chamado) {
         if (!chamado || chamado.status === "Concluído") {
@@ -36,11 +37,16 @@ class ChamadoController {
         chamado.atualizarStatus("Concluído");
 
         if (chamado.equipe) {
-            chamado.equipe.liberar();
+            chamado.equipe.liberar(); 
         }
     }
 
+
     listarChamados() {
+        if (this.chamados.length === 0) {
+            console.log("Nenhum chamado registrado.");
+            return;
+        }
         this.chamados.forEach(chamado => chamado.exibirInfo());
     }
 }
