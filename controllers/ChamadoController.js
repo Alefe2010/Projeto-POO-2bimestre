@@ -1,4 +1,4 @@
-const Chamado = require("./Chamado");
+const Chamado = require("../models/Chamado");
 
 class ChamadoController {
     constructor() {
