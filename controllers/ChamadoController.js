@@ -2,8 +2,8 @@ const Chamado = require("../models/Chamado");
 
 class ChamadoController {
     constructor() {
-        this.chamados = [];
-        this.contadorId = 1;
+        this.chamados = []; 
+        this.contadorId = 1; 
     }
 
     abrirChamado(descricao, categoria, localizacao) {
@@ -13,9 +13,8 @@ class ChamadoController {
             categoria,
             localizacao
         );
-        
+
         this.chamados.push(novoChamado);
-        
         return novoChamado;
     }
 
